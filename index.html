@@ -45,7 +45,13 @@
         message.textContent = "太大了，再試一次。";
         message.style.color = "red";
       }
-     }
+      if (numberOfGuess >= 5){
+        message.textContent= `You Failed! 答案是 ${targetNumber}`;
+        message.style.color = "red";
+        guessSubmit.disabled = true;
+      }
+    }
+     
       guessField.value = "";
       guessField.focus();
 
