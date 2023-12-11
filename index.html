@@ -21,11 +21,12 @@
     const guessField = document.getElementById("guessField");
     const guessSubmit = document.getElementById("guessSubmit");
     const message = document.querySelector(".message");
-    const numberOfGuess=0
+    var numberOfGuess=0
     const answerSubmit=document.getElementById("answerSubmit")
 
     // Event listener
     guessSubmit.addEventListener("click", checkGuess);
+    answerSubmit.addEventListener("click", checkAnswer)
 
     // Guess function
     function checkGuess() {
@@ -44,12 +45,13 @@
         message.textContent = "太大了，再試一次。";
         message.style.color = "red";
       }
-   function targetNumber(){
-    if (targetNumber === )
-   }
      }
       guessField.value = "";
       guessField.focus();
+
+      function checkAnswer(){
+        message.textContent = targetNumber;
+      }
      
   </script>
 </html>
