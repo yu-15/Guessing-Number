@@ -12,6 +12,7 @@
     <p class="message"></p>
     <input type="submit" value="揭曉答案" id="answerSubmit"/>
     <input type="submit" value="再玩一次" id="playAgain"/>
+    <p class="countdown"></p>
   </body>
   <script>
     // Random number
@@ -22,6 +23,7 @@
     const guessField = document.getElementById("guessField");
     const guessSubmit = document.getElementById("guessSubmit");
     const message = document.querySelector(".message");
+    const countdown = document.querySelector(".countdown");
     var numberOfGuess=0
     const answerSubmit=document.getElementById("answerSubmit")
     const playAgain=document.getElementById("playAgain")
@@ -54,6 +56,11 @@
         guessSubmit.disabled = true;
         numberOfGuess = 0;
         setTimeout(checkAgain,5e3)
+        delayedDisplay("5", 0, display)
+        delayedDisplay("4", 1e3, display)
+        delayedDisplay("3", 2e3, display)
+        delayedDisplay("2", 3e3, display)
+        // delayedDisplay("1", 4, display)
       }
     }
      
@@ -69,6 +76,15 @@
         guessField.value = "";
         message.textContent = "";
         guessSubmit.disabled = false;
+      }
+
+      function display(result){
+        message.textContent = result;
+      }
+
+      function delayedDisplay(str, ms, display){
+        console.log(str)
+        setTimeout(display(str), ms)
       }
      
   </script>
