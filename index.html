@@ -11,10 +11,11 @@
     <input type="submit" value="猜!" id="guessSubmit" />
     <p class="message"></p>
     <input type="submit" value="揭曉答案" id="answerSubmit"/>
+    <input type="submit" value="再玩一次" id="playAgain"/>
   </body>
   <script>
     // Random number
-    const targetNumber = Math.floor(Math.random() * 100) + 1;
+    var targetNumber = Math.floor(Math.random() * 100) + 1;
     console.log("answer: " + targetNumber);
 
     // Get element
@@ -23,10 +24,12 @@
     const message = document.querySelector(".message");
     var numberOfGuess=0
     const answerSubmit=document.getElementById("answerSubmit")
+    const playAgain=document.getElementById("playAgain")
 
     // Event listener
     guessSubmit.addEventListener("click", checkGuess);
-    answerSubmit.addEventListener("click", checkAnswer)
+    answerSubmit.addEventListener("click", checkAnswer);
+    playAgain.addEventListener("click", checkAgain);
 
     // Guess function
     function checkGuess() {
@@ -57,6 +60,13 @@
 
       function checkAnswer(){
         message.textContent = targetNumber;
+      }
+
+      function checkAgain(){
+        targetNumber = Math.floor(Math.random() * 100) + 1;
+        guessField.value = "";
+        message.textContent = "";
+        guessSubmit.disabled = false;
       }
      
   </script>
