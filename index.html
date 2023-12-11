@@ -10,6 +10,7 @@
     <input type="text" id="guessField" />
     <input type="submit" value="猜!" id="guessSubmit" />
     <p class="message"></p>
+    <input type="submit" value="揭曉答案" id="answerSubmit"/>
   </body>
   <script>
     // Random number
@@ -21,6 +22,7 @@
     const guessSubmit = document.getElementById("guessSubmit");
     const message = document.querySelector(".message");
     const numberOfGuess=0
+    const answerSubmit=document.getElementById("answerSubmit")
 
     // Event listener
     guessSubmit.addEventListener("click", checkGuess);
