@@ -82,10 +82,9 @@
         message.textContent = result;
       }
 
-      function delayedDisplay(str, ms, displayFunc){
-        setTimeout(function (){
-          displayFunc(str);
-      },ms);
+      function delayedDisplay(str, ms, display){
+        console.log(str)
+          setTimeout(display(str).ms)
       }
      
   </script>
